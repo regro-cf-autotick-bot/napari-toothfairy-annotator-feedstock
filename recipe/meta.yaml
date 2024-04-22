@@ -1,5 +1,5 @@
 {% set name = "napari-toothfairy-annotator" %}
-{% set version = "0.0.9" %}
+{% set version = "0.0.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-toothfairy-annotator-{{ version }}.tar.gz
-  sha256: e5e79fa38374c32cb7c7d79b3608bea2388b9ba159d5675042788dffa1b3df95
+  sha256: 36e90e350fc9484a41546d5556216d47a80a80a8fe95425b825087752e2a9c54
 
 build:
   noarch: python
