@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: b4baf13282c1a5402d0d4c09ac0ac627e96b041f1aad6692266a4095b7851b05
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy
     - magicgui
     - qtpy
@@ -34,6 +34,7 @@ test:
   requires:
     - pip
     - pyqt
+    - python {{ python_min }}
 
 about:
   home: https://github.com/LucaLumetti/napari-toothfairy-annotator
